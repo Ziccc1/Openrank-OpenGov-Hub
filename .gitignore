@@ -21,3 +21,6 @@ src/localConfig.ts
 
 # Large media files (use Git LFS or external hosting)
 演示.gif
+
+# Office temporary files
+~$*
