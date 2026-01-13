@@ -18,9 +18,9 @@
 
 import * as https from 'https';
 import * as path from 'path';
+import * as fs from 'fs';
 import { URL } from 'url';
 import * as XLSX from 'xlsx';
-import { getOutputPath } from '../utils';
 
 type Platform = 'github' | 'gitee';
 
@@ -406,9 +406,12 @@ async function run() {
   wsChinaPr['!cols'] = colWidths;
   XLSX.utils.book_append_sheet(wb, wsChinaPr, '中国Top5机构PR');
 
-  // 保存到output/excel文件夹
-  const baseOutputDir = path.resolve(__dirname, '../../output');
-  const outputPath = getOutputPath('top5_orgs_data.xlsx', baseOutputDir);
+  // 保存到output文件夹
+  const outputDir = path.resolve(__dirname, '../../output');
+  if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir, { recursive: true });
+  }
+  const outputPath = path.join(outputDir, 'top5_orgs_data.xlsx');
   XLSX.writeFile(wb, outputPath);
 
   console.log(`\n数据已保存到: ${outputPath}`);
