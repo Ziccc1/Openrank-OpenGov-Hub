@@ -18,3 +18,6 @@ dist/
 # Local config
 src/localConfig.ts
 *.log
+
+# Large media files (use Git LFS or external hosting)
+演示.gif
