@@ -46,56 +46,72 @@ OpenGov Hub 是一个**开源治理与运营一体化监测大屏**，旨在通�
 
 ```
 OpenGov Hub/
-├── dashboard/            # 大屏前端（待添加）
-│   ├── src/            # 前端源码
-│   ├── public/         # 静态资源
-│   └── package.json    # 前端依赖配置
-├── backend/             # 数据后端
-│   ├── src/
-│   │   ├── scripts/          # 数据收集脚本
-│   │   │   ├── fetch_issue_pr_data.ts        # Issue/PR数据拉取
-│   │   │   ├── generate_hourly_activity_data.ts  # 24小时行为数据
-│   │   │   ├── health_overview_from_oss.ts    # 健康度总览
-│   │   │   ├── oss_dashboard_fetch.ts         # 数据大屏数据拉取
-│   │   │   ├── oss_rows_to_csv.ts            # CSV转换
-│   │   │   ├── fetch_top5_orgs.ts             # Top5机构数据
-│   │   │   └── process_excel_by_year.ts       # Excel按年份处理
-│   │   └── utils.ts          # 工具函数库
-│   ├── output/               # 输出数据文件夹
-│   │   ├── oss_pr_issue_data.json
+├── src/                      # 源代码目录
+│   ├── scripts/              # 数据收集脚本（TypeScript）
+│   │   ├── fetch_issue_pr_data.ts        # Issue/PR数据拉取
+│   │   ├── fetch_leaderboard_data.ts     # Open Leaderboard数据拉取
+│   │   ├── fetch_top5_orgs.ts            # Top5机构数据
+│   │   ├── generate_hourly_activity_data.ts  # 24小时行为数据
+│   │   ├── health_overview_from_oss.ts   # 健康度总览
+│   │   ├── oss_dashboard_fetch.ts        # 数据大屏数据拉取
+│   │   ├── oss_rows_to_csv.ts           # CSV转换
+│   │   └── process_excel_by_year.ts      # Excel按年份处理
+│   └── utils.ts              # 工具函数库
+├── lib/                      # 编译输出目录（TypeScript编译后的JavaScript文件）
+│   ├── scripts/              # 编译后的脚本文件
+│   └── utils.js
+├── output/                   # 输出数据文件夹
+│   ├── csv/                  # CSV格式数据
+│   │   ├── leaderboard_china_top10_companies_2024.csv
+│   │   ├── leaderboard_china_top10_repos_2024.csv
+│   │   ├── leaderboard_global_top10_companies_2024.csv
+│   │   ├── leaderboard_global_top10_repos_2024.csv
 │   │   ├── oss_pr_issue_data.csv
-│   │   ├── oss_issue_data.xlsx
-│   │   ├── oss_pr_data.xlsx
+│   │   ├── oss_rows.csv
+│   │   └── tech_wordcloud_data.csv
+│   ├── excel/                # Excel格式数据
 │   │   ├── 2024年中国Top10机构24小时贡献行为占比.xlsx
 │   │   ├── health_overview.xlsx
-│   │   ├── oss_dashboard_data.json
-│   │   └── oss_rows.csv
-│   ├── output.py            # 技术热点词云图数据生成脚本（Python）
-│   ├── package.json         # 后端依赖配置
-│   └── tsconfig.json        # TypeScript配置
-├── .gitignore          # Git忽略配置
-├── .editorconfig       # 编辑器配置（可选）
-├── .npmrc              # npm配置（可选）
-├── LICENSE             # MIT许可证
-├── README.md           # 项目说明文档
-└── 文件说明.md         # 详细说明文档（可选）
+│   │   ├── leaderboard_top10_2024.xlsx
+│   │   ├── oss_issue_data.xlsx
+│   │   ├── oss_pr_data.xlsx
+│   │   └── tech_wordcloud_data.xlsx
+│   └── json/                 # JSON格式数据
+│       ├── leaderboard_top10_2024.json
+│       ├── oss_dashboard_data.json
+│       ├── oss_pr_issue_data.json
+│       └── tech_wordcloud_data.json
+├── output.csv                # 技术热点词云图原始数据（Python脚本输入）
+├── output.py                 # 技术热点词云图数据生成脚本（Python）
+├── package.json              # 项目依赖配置
+├── package-lock.json         # 依赖锁定文件
+├── tsconfig.json             # TypeScript编译配置
+├── .gitignore                # Git忽略配置
+├── LICENSE                   # MIT许可证
+├── README.md                 # 项目说明文档
+└── OpenGov Hub 初赛ppt.pptx  # 项目演示PPT
 ```
 
-> **注意**：当前项目结构为数据后端部分，大屏前端将在后续添加。
+> **注意**：当前项目结构为数据后端部分，大屏前端通过 DataEase 平台实现，访问链接见上方"访问大屏"部分。
 
 ## 安装
 
-### 数据后端安装
-
-当前项目结构为数据后端部分，安装步骤如下：
+### 项目依赖安装
 
 ```bash
-# 如果项目已按新结构组织（backend目录存在）
-cd backend
+# 安装 Node.js 依赖
 npm install
 
-# 如果项目仍为当前扁平结构（backend目录不存在）
-npm install
+# 编译 TypeScript 代码
+npm run build
+```
+
+### Python 依赖安装（可选，用于技术热点词云图数据生成）
+
+如果使用 `output.py` 脚本，需要安装以下 Python 包：
+
+```bash
+pip install pandas openpyxl
 ```
 
 ## 使用方法
@@ -107,10 +123,10 @@ npm run run:issuepr
 ```
 
 输出文件：
-- `output/oss_pr_issue_data.json` - JSON格式数据
-- `output/oss_pr_issue_data.csv` - CSV格式数据
-- `output/oss_issue_data.xlsx` - Issue数据（Excel格式，6个工作表）
-- `output/oss_pr_data.xlsx` - PR数据（Excel格式，6个工作表）
+- `output/json/oss_pr_issue_data.json` - JSON格式数据
+- `output/csv/oss_pr_issue_data.csv` - CSV格式数据
+- `output/excel/oss_issue_data.xlsx` - Issue数据（Excel格式，6个工作表）
+- `output/excel/oss_pr_data.xlsx` - PR数据（Excel格式，6个工作表）
 
 ### 2. 生成 24小时行为数据
 
@@ -119,20 +135,20 @@ npm run run:hourly
 ```
 
 输出文件：
-- `output/2024年中国Top10机构24小时贡献行为占比.xlsx`（3个工作表）
+- `output/excel/2024年中国Top10机构24小时贡献行为占比.xlsx`（3个工作表）
 
 ### 3. 生成健康度总览
 
 **注意**：需要先运行数据大屏数据拉取和CSV转换：
 
 ```bash
-npm run run:dashboard  # 生成 oss_dashboard_data.json
-npm run run:csv       # 生成 oss_rows.csv
-npm run run:health    # 生成 health_overview.xlsx
+npm run run:dashboard  # 生成 output/json/oss_dashboard_data.json
+npm run run:csv       # 生成 output/csv/oss_rows.csv
+npm run run:health    # 生成 output/excel/health_overview.xlsx
 ```
 
 输出文件：
-- `output/health_overview.xlsx`（3个工作表：矩阵格式、雷达图、长格式）
+- `output/excel/health_overview.xlsx`（3个工作表：矩阵格式、雷达图、长格式）
 
 ### 4. 提取 Open Leaderboard 数据
 
@@ -141,7 +157,9 @@ npm run run:leaderboard    # 提取2024年全球Top10和中国Top10项目OpenRan
 ```
 
 输出文件：
-- `output/leaderboard_top10_2024.xlsx` - Top10项目和企业数据（Excel格式）
+- `output/excel/leaderboard_top10_2024.xlsx` - Top10项目和企业数据（Excel格式）
+- `output/json/leaderboard_top10_2024.json` - Top10项目和企业数据（JSON格式）
+- `output/csv/leaderboard_*.csv` - Top10项目和企业数据（CSV格式，多个文件）
 
 **功能说明**：
 - 从 Open Leaderboard OSS 获取项目和企业排行榜数据
@@ -169,9 +187,9 @@ npm run run:wordcloud-py
 ```
 
 **输出文件**：
-- `output/tech_wordcloud_data.json` - JSON格式数据
-- `output/tech_wordcloud_data.csv` - CSV格式数据
-- `output/tech_wordcloud_data.xlsx` - Excel格式（2个工作表）
+- `output/json/tech_wordcloud_data.json` - JSON格式数据
+- `output/csv/tech_wordcloud_data.csv` - CSV格式数据
+- `output/excel/tech_wordcloud_data.xlsx` - Excel格式（2个工作表）
 
 **功能说明**：
 - 从 `output.csv` 中读取仓库的 topics 字段
@@ -186,12 +204,26 @@ npm run run:all
 
 ## 输出文件说明
 
-所有输出文件保存在 `output/` 文件夹中：
+所有输出文件保存在 `output/` 文件夹中，按格式分类存储：
 
-### Issue/PR 数据
-- `oss_pr_issue_data.json` - PR和Issue数据（JSON格式，包含所有原始数据和错误信息）
-- `oss_pr_issue_data.csv` - PR和Issue数据（CSV格式，扁平化表格）
-- `oss_issue_data.xlsx` - Issue数据（Excel格式）
+### JSON 格式数据 (`output/json/`)
+- `oss_pr_issue_data.json` - PR和Issue数据（包含所有原始数据和错误信息）
+- `oss_dashboard_data.json` - 数据大屏原始数据
+- `oss_pr_issue_data.json` - PR和Issue数据（JSON格式）
+- `leaderboard_top10_2024.json` - 2024年Top10项目和企业数据
+- `tech_wordcloud_data.json` - 技术热点词数据（前15排名）
+
+### CSV 格式数据 (`output/csv/`)
+- `oss_pr_issue_data.csv` - PR和Issue数据（扁平化表格）
+- `oss_rows.csv` - 扁平化CSV数据（健康度总览的输入文件）
+- `leaderboard_china_top10_companies_2024.csv` - 2024年中国Top10企业数据
+- `leaderboard_china_top10_repos_2024.csv` - 2024年中国Top10项目数据
+- `leaderboard_global_top10_companies_2024.csv` - 2024年全球Top10企业数据
+- `leaderboard_global_top10_repos_2024.csv` - 2024年全球Top10项目数据
+- `tech_wordcloud_data.csv` - 技术热点词数据
+
+### Excel 格式数据 (`output/excel/`)
+- `oss_issue_data.xlsx` - Issue数据（6个工作表）
   - 工作表1：世界原始数据
   - 工作表2：世界按年份聚合
   - 工作表3：世界时间均值
@@ -199,30 +231,16 @@ npm run run:all
   - 工作表5：中国按年份聚合
   - 工作表6：中国时间均值
 - `oss_pr_data.xlsx` - PR数据（Excel格式，同上6个工作表）
-
-### 24小时行为数据
-- `2024年中国Top10机构24小时贡献行为占比.xlsx`
+- `2024年中国Top10机构24小时贡献行为占比.xlsx` - 24小时行为数据（3个工作表）
   - 工作表1：汇总数据（所有仓库合并后的24小时占比）
   - 工作表2：各机构汇总（每个机构的汇总数据）
   - 工作表3：各仓库详细数据（每个仓库的详细数据）
-
-### 健康度总览
-- `health_overview.xlsx`
+- `health_overview.xlsx` - 健康度总览（3个工作表）
   - 工作表1：矩阵格式（健康维度为行，项目类别为列，用于热力图）
   - 工作表2：radar（项目类别为行，健康维度为列，用于雷达图）
   - 工作表3：长格式（按类别分组的长格式数据）
-
-### 技术热点词云图数据
-- `tech_wordcloud_data.json` - 技术热点词数据（JSON格式，前15排名）
-- `tech_wordcloud_data.csv` - 技术热点词数据（CSV格式）
-- `tech_wordcloud_data.xlsx` - 技术热点词数据（Excel格式，2个工作表）
-
-### Open Leaderboard 数据
-- `leaderboard_top10_2024.xlsx` - 2024年Top10项目和企业数据（Excel格式，4个工作表）
-
-### 中间数据文件
-- `oss_dashboard_data.json` - 数据大屏原始数据
-- `oss_rows.csv` - 扁平化CSV数据（健康度总览的输入文件）
+- `leaderboard_top10_2024.xlsx` - 2024年Top10项目和企业数据（4个工作表）
+- `tech_wordcloud_data.xlsx` - 技术热点词数据（2个工作表）
 
 ## 自定义配置
 
@@ -230,7 +248,7 @@ npm run run:all
 
 1. **仓库列表**：修改 `repos` 数组，添加或删除需要分析的仓库
 2. **指标列表**：修改 `metrics` 数组，选择需要拉取的指标
-3. **输出路径**：默认在 `output/` 文件夹，可在脚本中修改
+3. **输出路径**：默认在 `output/` 文件夹下，按格式分类存储到 `csv/`、`excel/`、`json/` 子文件夹，可在脚本中修改
 
 
 ## 数据源
