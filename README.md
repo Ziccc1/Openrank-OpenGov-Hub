@@ -88,8 +88,7 @@ OpenGov Hub/
 ├── tsconfig.json             # TypeScript编译配置
 ├── .gitignore                # Git忽略配置
 ├── LICENSE                   # MIT许可证
-├── README.md                 # 项目说明文档
-└── OpenGov Hub 初赛ppt.pptx  # 项目演示PPT
+└── README.md                 # 项目说明文档
 ```
 
 > **注意**：当前项目结构为数据后端部分，大屏前端通过 DataEase 平台实现，访问链接见上方"访问大屏"部分。
