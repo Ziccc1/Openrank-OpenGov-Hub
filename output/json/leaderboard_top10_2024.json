@@ -1,0 +1,375 @@
+{
+  "chinaTop10Repos": [
+    {
+      "name": "openharmony/docs",
+      "rank": 1,
+      "value": 7782.91,
+      "openrank": 7782.91,
+      "activity": 7782.91,
+      "rankDelta": 2,
+      "valueDelta": 2632.6
+    },
+    {
+      "name": "mindspore/mindspore",
+      "rank": 2,
+      "value": 6666.89,
+      "openrank": 6666.89,
+      "activity": 6666.89,
+      "rankDelta": -1,
+      "valueDelta": -1422.3
+    },
+    {
+      "name": "DaoCloud/public-image-mirror",
+      "rank": 3,
+      "value": 5459.48,
+      "openrank": 5459.48,
+      "activity": 5459.48,
+      "rankDelta": 522,
+      "valueDelta": 5380.08
+    },
+    {
+      "name": "PaddlePaddle/Paddle",
+      "rank": 4,
+      "value": 4358.82,
+      "openrank": 4358.82,
+      "activity": 4358.82,
+      "rankDelta": -2,
+      "valueDelta": -868.37
+    },
+    {
+      "name": "apache/doris",
+      "rank": 5,
+      "value": 4293.75,
+      "openrank": 4293.75,
+      "activity": 4293.75,
+      "rankDelta": -1,
+      "valueDelta": 184.81
+    },
+    {
+      "name": "openharmony/graphic_graphic_2d",
+      "rank": 6,
+      "value": 3657.36,
+      "openrank": 3657.36,
+      "activity": 3657.36,
+      "rankDelta": 6,
+      "valueDelta": 1949.32
+    },
+    {
+      "name": "openharmony/arkui_ace_engine",
+      "rank": 7,
+      "value": 3445.8,
+      "openrank": 3445.8,
+      "activity": 3445.8,
+      "rankDelta": 0,
+      "valueDelta": 3445.8
+    },
+    {
+      "name": "StarRocks/starrocks",
+      "rank": 8,
+      "value": 3346.32,
+      "openrank": 3346.32,
+      "activity": 3346.32,
+      "rankDelta": -2,
+      "valueDelta": 242.88
+    },
+    {
+      "name": "openharmony/xts_acts",
+      "rank": 9,
+      "value": 2874.3,
+      "openrank": 2874.3,
+      "activity": 2874.3,
+      "rankDelta": 4,
+      "valueDelta": 1174.9
+    },
+    {
+      "name": "ant-design/ant-design",
+      "rank": 10,
+      "value": 2664.87,
+      "openrank": 2664.87,
+      "activity": 2664.87,
+      "rankDelta": -5,
+      "valueDelta": -528.62
+    }
+  ],
+  "globalTop10Repos": [
+    {
+      "name": "NixOS/nixpkgs",
+      "rank": 1,
+      "value": 25973.93,
+      "openrank": 25973.93,
+      "activity": 25973.93,
+      "rankDelta": 0,
+      "valueDelta": 5879.51
+    },
+    {
+      "name": "llvm/llvm-project",
+      "rank": 2,
+      "value": 21892.64,
+      "openrank": 21892.64,
+      "activity": 21892.64,
+      "rankDelta": 7,
+      "valueDelta": 13089.09
+    },
+    {
+      "name": "home-assistant/core",
+      "rank": 3,
+      "value": 16210.42,
+      "openrank": 16210.42,
+      "activity": 16210.42,
+      "rankDelta": -1,
+      "valueDelta": 2571.63
+    },
+    {
+      "name": "pytorch/pytorch",
+      "rank": 4,
+      "value": 12874.66,
+      "openrank": 12874.66,
+      "activity": 12874.66,
+      "rankDelta": 0,
+      "valueDelta": 1218.23
+    },
+    {
+      "name": "microsoft/vscode",
+      "rank": 5,
+      "value": 12254.26,
+      "openrank": 12254.26,
+      "activity": 12254.26,
+      "rankDelta": -2,
+      "valueDelta": -47.31
+    },
+    {
+      "name": "digitalinnovationone/dio-lab-open-source",
+      "rank": 6,
+      "value": 11482.55,
+      "openrank": 11482.55,
+      "activity": 11482.55,
+      "rankDelta": 8,
+      "valueDelta": 4575.63
+    },
+    {
+      "name": "odoo/odoo",
+      "rank": 7,
+      "value": 11106.84,
+      "openrank": 11106.84,
+      "activity": 11106.84,
+      "rankDelta": -1,
+      "valueDelta": 1948.23
+    },
+    {
+      "name": "DigitalPlatDev/FreeDomain",
+      "rank": 8,
+      "value": 9963.45,
+      "openrank": 9963.45,
+      "activity": 9963.45,
+      "rankDelta": 0,
+      "valueDelta": 9963.45
+    },
+    {
+      "name": "zephyrproject-rtos/zephyr",
+      "rank": 9,
+      "value": 9285.23,
+      "openrank": 9285.23,
+      "activity": 9285.23,
+      "rankDelta": 2,
+      "valueDelta": 1456.83
+    },
+    {
+      "name": "godotengine/godot",
+      "rank": 10,
+      "value": 9227.53,
+      "openrank": 9227.53,
+      "activity": 9227.53,
+      "rankDelta": -3,
+      "valueDelta": 141.58
+    }
+  ],
+  "chinaTop10Orgs": [
+    {
+      "name": "Huawei",
+      "rank": 1,
+      "value": 101976.23,
+      "openrank": 101976.23,
+      "activity": 101976.23,
+      "rankDelta": 0,
+      "valueDelta": 28258.11
+    },
+    {
+      "name": "Alibaba",
+      "rank": 2,
+      "value": 28436.34,
+      "openrank": 28436.34,
+      "activity": 28436.34,
+      "rankDelta": 0,
+      "valueDelta": -2247.68
+    },
+    {
+      "name": "Ant group",
+      "rank": 3,
+      "value": 22459.47,
+      "openrank": 22459.47,
+      "activity": 22459.47,
+      "rankDelta": 1,
+      "valueDelta": 648.82
+    },
+    {
+      "name": "Baidu",
+      "rank": 4,
+      "value": 17812.9,
+      "openrank": 17812.9,
+      "activity": 17812.9,
+      "rankDelta": -1,
+      "valueDelta": -5302.86
+    },
+    {
+      "name": "ByteDance",
+      "rank": 5,
+      "value": 9904.25,
+      "openrank": 9904.25,
+      "activity": 9904.25,
+      "rankDelta": 1,
+      "valueDelta": 1463.08
+    },
+    {
+      "name": "DaoCloud",
+      "rank": 6,
+      "value": 7405,
+      "openrank": 7405,
+      "activity": 7405,
+      "rankDelta": 12,
+      "valueDelta": 5313.26
+    },
+    {
+      "name": "ESPRESSIF",
+      "rank": 7,
+      "value": 7368.23,
+      "openrank": 7368.23,
+      "activity": 7368.23,
+      "rankDelta": 1,
+      "valueDelta": 506.68
+    },
+    {
+      "name": "Tencent",
+      "rank": 8,
+      "value": 7204.39,
+      "openrank": 7204.39,
+      "activity": 7204.39,
+      "rankDelta": -3,
+      "valueDelta": -2654.3
+    },
+    {
+      "name": "Fit2Cloud",
+      "rank": 9,
+      "value": 7011.33,
+      "openrank": 7011.33,
+      "activity": 7011.33,
+      "rankDelta": 0,
+      "valueDelta": 1157.31
+    },
+    {
+      "name": "PingCAP",
+      "rank": 10,
+      "value": 5778.96,
+      "openrank": 5778.96,
+      "activity": 5778.96,
+      "rankDelta": -3,
+      "valueDelta": -1130.56
+    }
+  ],
+  "globalTop10Orgs": [
+    {
+      "name": "Microsoft",
+      "rank": 1,
+      "value": 212245.11,
+      "openrank": 212245.11,
+      "activity": 212245.11,
+      "rankDelta": 0,
+      "valueDelta": 433.84
+    },
+    {
+      "name": "Huawei",
+      "rank": 2,
+      "value": 101976.23,
+      "openrank": 101976.23,
+      "activity": 101976.23,
+      "rankDelta": 1,
+      "valueDelta": 28258.11
+    },
+    {
+      "name": "Google",
+      "rank": 3,
+      "value": 92767.94,
+      "openrank": 92767.94,
+      "activity": 92767.94,
+      "rankDelta": -1,
+      "valueDelta": -8117.29
+    },
+    {
+      "name": "Amazon",
+      "rank": 4,
+      "value": 65081.31,
+      "openrank": 65081.31,
+      "activity": 65081.31,
+      "rankDelta": 0,
+      "valueDelta": -5240.78
+    },
+    {
+      "name": "Meta",
+      "rank": 5,
+      "value": 44171.27,
+      "openrank": 44171.27,
+      "activity": 44171.27,
+      "rankDelta": 0,
+      "valueDelta": 178.2
+    },
+    {
+      "name": "RedHat",
+      "rank": 6,
+      "value": 37648.46,
+      "openrank": 37648.46,
+      "activity": 37648.46,
+      "rankDelta": 0,
+      "valueDelta": 1598.4
+    },
+    {
+      "name": "Mozilla",
+      "rank": 7,
+      "value": 30445.05,
+      "openrank": 30445.05,
+      "activity": 30445.05,
+      "rankDelta": 0,
+      "valueDelta": -685.77
+    },
+    {
+      "name": "Alibaba",
+      "rank": 8,
+      "value": 28436.34,
+      "openrank": 28436.34,
+      "activity": 28436.34,
+      "rankDelta": 0,
+      "valueDelta": -2247.68
+    },
+    {
+      "name": "IBM",
+      "rank": 9,
+      "value": 23740.09,
+      "openrank": 23740.09,
+      "activity": 23740.09,
+      "rankDelta": 0,
+      "valueDelta": -1168.16
+    },
+    {
+      "name": "Nabu Casa Inc.",
+      "rank": 10,
+      "value": 23367.12,
+      "openrank": 23367.12,
+      "activity": 23367.12,
+      "rankDelta": 5,
+      "valueDelta": 2775.94
+    }
+  ],
+  "metadata": {
+    "year": 2024,
+    "generatedAt": "2026-01-13T12:51:13.821Z",
+    "source": "Open Leaderboard"
+  }
+}

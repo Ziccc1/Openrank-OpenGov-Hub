@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build output
+lib/
+dist/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Output data (uncomment if you don't want to commit output files)
+# output/
+
+# Local config
+src/localConfig.ts
+*.log

@@ -1,0 +1,36 @@
+{
+  "name": "opengov-hub",
+  "version": "1.0.0",
+  "description": "OpenGov Hub - 开源治理与运营一体化监测大屏，用于生成issuepr、24小时行为、健康度总览等数据表",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "run:issuepr": "npm run build && node lib/scripts/fetch_issue_pr_data.js",
+    "run:hourly": "npm run build && node lib/scripts/generate_hourly_activity_data.js",
+    "run:health": "npm run build && node lib/scripts/health_overview_from_oss.js",
+    "run:dashboard": "npm run build && node lib/scripts/oss_dashboard_fetch.js",
+    "run:csv": "npm run build && node lib/scripts/oss_rows_to_csv.js",
+    "run:top5": "npm run build && node lib/scripts/fetch_top5_orgs.js",
+    "run:process": "npm run build && node lib/scripts/process_excel_by_year.js",
+    "run:wordcloud": "python output.py",
+    "run:leaderboard": "npm run build && node lib/scripts/fetch_leaderboard_data.js",
+    "run:all": "npm run build && npm run run:dashboard && npm run run:csv && npm run run:issuepr && npm run run:hourly && npm run run:health"
+  },
+  "keywords": [
+    "opendigger",
+    "opensource",
+    "data-analysis",
+    "github",
+    "metrics"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.37",
+    "@types/xlsx": "^0.0.35",
+    "typescript": "^4.9.3"
+  }
+}
