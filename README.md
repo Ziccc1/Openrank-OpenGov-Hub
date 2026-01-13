@@ -2,6 +2,12 @@
 
 开源治理与运营一体化监测大屏
 
+## 🔗 访问大屏
+
+**在线访问地址**：[https://student.dataease2.fit2cloud.com/#/de-link/tul5QYuJ](https://student.dataease2.fit2cloud.com/#/de-link/tul5QYuJ)
+
+> 💡 提示：点击上方链接即可访问 OpenGov Hub 数据可视化大屏，查看实时开源生态数据。
+
 ## 📊 大屏简介
 
 OpenGov Hub 是一个**开源治理与运营一体化监测大屏**，旨在通过数据可视化大屏的方式，为开发者、企业OSPO、项目维护者及监管方提供实时、全面的开源生态数据支撑。
